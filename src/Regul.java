@@ -14,6 +14,11 @@ public class Regul {
         exercise1(imput3);
         exercise1(imput4);
 
+        String imput5 = "abc@mail.com";
+        String imput6 = "zzz@ccc.v";
+
+        exercise2(imput5);
+        exercise2(imput6);
     }
 
 
@@ -30,4 +35,18 @@ public class Regul {
         System.out.println(matched);
 
     }
+
+    public static void exercise2(String imput){
+
+        String regex = "(?<=@)[^ ]+";
+
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(imput);
+
+        matcher.find();
+        String group = matcher.group();
+
+        System.out.println(group);
+    }
+
 }
